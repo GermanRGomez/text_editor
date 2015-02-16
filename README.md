@@ -1,9 +1,9 @@
 text_editor
 ===========
 @author: German R. Gomez Urbina.
-@date: 12 October, 2014.
+@date: 15 February, 2015.
 
-Text Editor with C++
+Text Editor with C.
 
 notes:
 
@@ -24,3 +24,14 @@ notes:
                   ------------- Keyboard Reader <-> Keyboard
 
  -> The arrows indicate the direction of data. This may change.
+
+@date: 15 February, 2015.
+
+-> Decided to progress with C.
+
+-> The Keyboard and Screen implentation have been put together into one program
+   for ease of development. The program is called sk_manager (Screen/Keyboard).
+
+-> Responsible to determine the input and thus the overall behaviour of the
+   program.
+
