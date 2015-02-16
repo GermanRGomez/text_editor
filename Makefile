@@ -9,4 +9,4 @@ sk_manager.o: sk_manager.c
 	gcc -c sk_manager.c 
 
 clean:
-	rm -rf *~ *.o
+	rm -rf *~ *.o sk_manager

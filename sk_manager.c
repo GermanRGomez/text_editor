@@ -8,7 +8,6 @@
  * responsible for input from the keyboard and outputting to the screen.
  * This is implemented using the ncurses library.
  */
-static void end(int sig);
 
 void init()
 {
@@ -17,7 +16,7 @@ void init()
   initscr();             /* Initialize the ncurses library */
   keypad(stdscr, TRUE);  /* Enable keyboard mapping */
   cbreak();              /* Take input one character at a time */
-  echo();
+  noecho();
 }
 
 static void end(int sig)
@@ -25,3 +24,20 @@ static void end(int sig)
   endwin();
   exit(0);
 }
+
+int main(int argc, char ** argv)
+{
+  char ch;
+  init();
+  
+  printw("EdIt v1.0 - Ctrl + C to close...\n");
+  refresh();
+  
+  for(;;)
+    {
+      ch = getch();
+      printw("%c", ch);
+    }
+}
+      
+  
