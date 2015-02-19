@@ -27,7 +27,8 @@ static void end(int sig)
 
 int main(int argc, char ** argv)
 {
-  char ch;
+  int ch, x, y;
+  
   init();
   
   printw("EdIt v1.0 - Ctrl + C to close...\n");
@@ -36,7 +37,28 @@ int main(int argc, char ** argv)
   for(;;)
     {
       ch = getch();
-      printw("%c", ch);
+      refresh();
+      /* Make this into a switch statement */
+      /* Consider making a function for each case */ 
+      if (ch == KEY_ENTER)
+	{
+	  printw("\n");
+	} else if(ch == KEY_BACKSPACE)
+	{
+	  /*
+	   * Make a function for this case, it must move cursor, the add blank
+	   * and move back.
+	   * Deal with special case of going to the line above if original line
+	   * is already empty.
+	   */
+	  getyx(stdscr, y, x);
+	  move(y,x - 1);
+	  printw(" ");
+	  move(y,x - 1);
+	} else 
+	{
+	  printw("%c", ch);
+	}
     }
 }
       
