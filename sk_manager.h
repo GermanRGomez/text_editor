@@ -3,6 +3,7 @@
 
 static void end(int sig);
 void init();
-
+void BACKSPACE_KEY(int y, int x)
+;
 #endif
 
