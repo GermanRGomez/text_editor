@@ -89,7 +89,8 @@ void BACKSPACE_KEY(int y, int x)
 		move(y, x - 1);
 	} else 
 	{
-		move(y - 1, x); 
+		if(y > 1)
+			move(y - 1, x); /* Do not delete the title */  
 	}
 }
 
