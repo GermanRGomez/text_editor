@@ -11,56 +11,55 @@
 
 void init()
 {
-  signal(SIGINT, end);
-  
-  initscr();             /* Initialize the ncurses library */
-  keypad(stdscr, TRUE);  /* Enable keyboard mapping */
-  cbreak();              /* Take input one character at a time */
-  noecho();
+	signal(SIGINT, end);
+	initscr();             /* Initialize the ncurses library */
+	keypad(stdscr, TRUE);  /* Enable keyboard mapping */
+  	cbreak();              /* Take input one character at a time */
+	noecho();
 }
 
 static void end(int sig)
 {
-  endwin();
-  exit(0);
+	endwin();
+  	exit(0);
 }
 
-int main(int argc, char ** argv)
+/*
+ * get_command
+ * 
+ * Obtains command, and determines what is to be done.
+ *
+ */
+void get_command(int command, int y, int x)
 {
-  int ch, x, y;
-  
-  init();
-  
-  printw("EdIt v1.0 - Ctrl + C to close...\n");
-  refresh();
-  
-  for(;;)
-  {
-	ch = getch();
-	getyx(stdscr, y, x);	
-     	refresh();
-   	
-	/*
+	
+  	/*
 	 * Functions to add:
 	 * Shift
 	 * Delete
 	 * Directional buttons
 	 * Buttons that change state (TBD).
 	 */
-	switch(ch)
+	switch(command)
 	{
 		case KEY_ENTER:
-			printw("\n");
+			printw("\n"); // Newline
 			break;
 		case KEY_BACKSPACE:
 			BACKSPACE_KEY(y, x);
+			// TODO DELETE 
+			break;
+		case KEY_LEFT:
+			// TODO
+			break;
+		case KEY_RIGHT:
+			// TODO
 			break;
 		default: 
-			printw("%c", ch); 
+			printw("%c", command); // Insert characters 
 	}			 
-    }
 }
-      
+
 /*
  * BACKSPACE_KEY 
  * 
