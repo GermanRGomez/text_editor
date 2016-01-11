@@ -6,7 +6,7 @@
 /*
  * Entry point for editor porgram.
  */
-void main(int argc, char * argv[])
+int main(int argc, char * argv[])
 {
 	int command;
 	int y;
@@ -21,6 +21,7 @@ void main(int argc, char * argv[])
 		getyx(stdscr, y, x);
 		get_command(command, y, x);
 	}
+	return 0;
 }
 	
 	
