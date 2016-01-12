@@ -3,7 +3,7 @@
 # 26 October 2014.
 
 main: editor.o sk_manager.o
-	gcc editor.o sk_manager.o -Wall -lncurses -o editor
+	gcc editor.o sk_manager.o -std=c11 -Wall -Wextra -pedantic -Wstrict-overflow -fno-strict-aliasing -march=native -lncurses -o editor
 
 editor.o: editor.c
 	gcc -c editor.c
