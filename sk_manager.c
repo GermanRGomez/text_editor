@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdint.h>
 #include <curses.h>
 #include <signal.h>
 #include "sk_manager.h"
@@ -18,7 +19,7 @@ void init()
 	noecho();
 }
 
-static void end(int sig)
+void end(int sig)
 {
 	endwin();
   	exit(0);

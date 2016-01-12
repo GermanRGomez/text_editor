@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdint.h>
 #include <curses.h>
 #include <signal.h>
 #include "sk_manager.h"
@@ -21,6 +22,7 @@ int main(int argc, char * argv[])
 		getyx(stdscr, y, x);
 		get_command(command, y, x);
 	}
+
 	return 0;
 }
 	

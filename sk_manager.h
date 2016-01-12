@@ -3,7 +3,7 @@
 
 // prototypes
 
-static void end(int sig);
+void end(int sig);
 void init();
 void get_command(int command, int y, int x);
 void BACKSPACE_KEY(int y, int x);
